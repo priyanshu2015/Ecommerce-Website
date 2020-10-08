@@ -1,0 +1,16 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block title %}
+My Profile
+{% endblock %}
+{% block css %}
+
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<h1>Welcome</h1>
+<a class="btn btn-primary" href="{% url "shop:changeEmail" %}">Change Email</a>
+</div>
+{% endblock %}

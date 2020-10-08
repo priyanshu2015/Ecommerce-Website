@@ -1,0 +1,26 @@
+  
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+</head>
+<body>
+    Pay Here
+ <form action="charge/" method="POST"> {% csrf_token %}
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_N8qzOUbSVfTEex" // Enter the Key ID generated from the Dashboard
+    data-currency="INR"
+    data-order_id="{{order_id}}"//This is a sample Order ID. Pass the `id` obtained in the response of the previous step.
+    data-buttontext="Pay with Razorpay"
+    data-name="XYZ Company"
+    data-description="Test transaction"
+    data-image="https://example.com/your_logo.jpg"
+    data-prefill.name="{{cname}}"
+    data-prefill.email="{{cemail}}"
+    data-prefill.contact="{{cphone}}"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+</body>
+</html

@@ -1,0 +1,22 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+{% block css %}
+
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<form action="/shop/changeEmail/" method="post">{% csrf_token %}
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email"
+            placeholder="Enter Your Email" required>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+</div>
+{% endblock %}
