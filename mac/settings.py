@@ -33,7 +33,7 @@ SECRET_KEY = '^dw%4oe^h3y2@9i6=+l14$v^t17vy5u$)jxniwzlp6$cyobl+t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ecommerce-mac.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
