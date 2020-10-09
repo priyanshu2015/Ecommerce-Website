@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'shop.middleware.SameSiteMiddleware',# position it at the top
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
 
@@ -63,8 +64,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 SESSION_COOKIE_SAMESITE = None
-SESSION_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
+
 
 ROOT_URLCONF = 'mac.urls'
 
