@@ -15,7 +15,7 @@ import os
 import environ
 env = environ.Env(
     # set casting, default value,  if DEBUG=True/On in .env then True otherwise False
-    DEBUG=(bool, True)
+    DEBUG=(bool, False)
 )
 # reading .env file
 environ.Env.read_env()
@@ -53,6 +53,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -137,8 +140,10 @@ MEDIA_URL = '/media/'
 
 
 # add this section to open static files in django
+
+STATIC_ROOT = os.path.join(BASE_DIR , 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static_cdn")
 ]
 
 AUTH_USER_MODEL = 'shop.User'
