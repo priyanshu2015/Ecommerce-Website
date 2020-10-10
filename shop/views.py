@@ -45,6 +45,9 @@ def contact(request):
         desc = request.POST.get('desc', '')
         contact = Contact(name=name, email=email, phone=phone, desc=desc)   # saving in dataset just like by using python as in shell
         contact.save()
+        if 'name' in request.POST:
+            q = request.POST['name']
+            return render(request, 'shop/contact.html', {'query': q})
     return render(request, 'shop/contact.html')
 def tracker(request):
     if request.method == "POST":
