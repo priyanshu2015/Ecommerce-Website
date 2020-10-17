@@ -21,6 +21,6 @@ urlpatterns = [
     path('myprofile/', views.myprofile,  name="myprofile"),
     path('handleLoginEmail/', views.handleLoginEmail, name='handleLoginEmail'),
     path('changeEmail/', views.changeEmail, name='changeEmail'),
-
+    path('register/', views.SignUpView.as_view(), name='register'),
 
 ]

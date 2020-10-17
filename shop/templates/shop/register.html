@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+{% load myfilters %}
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+  <!-- Favicons -->
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+</head>
+
+<body>
+  <div class="container">
+    <main class="form-signin">
+      <form method="POST" onsubmit="{% url "shop:register" %}">{% csrf_token %}
+        <h1 class="brand-name">My Awesome Cart</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Please Sign Up</h1>
+        {{ form.non_field_errors }}
+        <label for="id_user_email" class="login-labels">Email Address*</label>
+        <!-- <input type="email" name="user_email" class="form-control" autofocus autocapitalize="none" maxlength="254" required id="id_user_email"> -->
+        {{ form.user_email|addclass:'form-control'|addplaceholder:'Email Address' }}
+        {{ form.user_email.errors }}
+        <label for="id_user_name" class="login-labels">Your Name*</label>
+        {{ form.user_name|addclass:'form-control'|addplaceholder:'Your Name' }}
+        {{ form.user_name.errors }}
+        <label for="id_user_phone" class="login-labels">Phone Number*</label>
+          {{ form.user_phone|addclass:'form-control'|addplaceholder:'Phone Number' }}
+        {{ form.user_phone.errors }}
+        <label for="id_password1" class="login-labels">Password*</label>
+        {{ form.password1|addclass:'form-control'|addplaceholder:'Password' }}
+        {{ form.password1.errors }}
+        <label for="id_password2" class="login-labels">Password Confirmation*</label>
+        {{ form.password2|addclass:'form-control'|addplaceholder:'Password' }}
+        {{ form.password2.errors }}
+        <p class="login-labels">Exisiting User? <a href="{% url "shop:handleLoginEmail" %}">Sign In</a></p>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
+      </form>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"></script>
+    <div>
+</body>
+
+</html>

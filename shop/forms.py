@@ -16,3 +16,14 @@ class UserChangeForm(UserChangeForm):
     class Meta:
         model = User
         fields = ('user_phone',)
+
+class SignUpForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = [
+            'user_email', 
+            'user_name', 
+            'user_phone',
+            'password1', 
+            'password2', 
+            ]

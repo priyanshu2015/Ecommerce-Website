@@ -7,6 +7,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from mac import settings
 
+from django.views.generic import CreateView
+from .forms import SignUpForm
+from django.urls import reverse_lazy
+
 # payment
 import razorpay
 razorpay_client = razorpay.Client(auth=(settings.razorpay_id, settings.razorpay_account_id))
@@ -192,4 +196,9 @@ def handleLogout(request):
     # path=path[0:-1]
     # path="/"+path
     return redirect('shop:home')
+
+class SignUpView(CreateView):
+    form_class = SignUpForm    # in signupform there is inbuilt create user function so no need for create_user in managers.py
+    success_url = reverse_lazy('shop:handleLoginEmail')
+    template_name = 'shop/register.html'
 
