@@ -40,7 +40,7 @@
         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
       </div>
       <div class="modal-body">
-      <form action = "/blog/" method = "POST">
+      <form action = "/blog/" method = "POST">{% csrf_token %}
         <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Heading</label>
   <input type="text" class="form-control" id="exampleFormControlInput1" name="heading">
