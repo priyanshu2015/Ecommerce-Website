@@ -51,21 +51,21 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # 'shop.middleware.SameSiteMiddleware',# position it at the top
+    'shop.middleware.SameSiteMiddleware',# position it at the top
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 
-# SESSION_COOKIE_SAMESITE = None
+SESSION_COOKIE_SAMESITE = None
 SESSION_COOKIE_SECURE = True
 #SECURE_SSL_REDIRECT = True
 
